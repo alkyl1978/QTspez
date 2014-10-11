@@ -1,5 +1,10 @@
 #include "cserialport.h"
 
+ CSerialPort::CSerialPort()
+{
+    serial=new QSerialPort();
+}
+
 
 QList<QString> CSerialPort::GiveAvaliableCom()
 {

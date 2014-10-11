@@ -14,9 +14,9 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    cserialport.cpp
+        cserialport.cpp
 
 HEADERS  += mainwindow.h \
-    cserialport.h
+            cserialport.h
 
 FORMS    += mainwindow.ui
