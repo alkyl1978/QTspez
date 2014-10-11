@@ -6,8 +6,9 @@
 #include <QDebug>
 
 
-class CSerialPort
+class CSerialPort : public QObject
 {
+    Q_OBJECT
 public:
     CSerialPort();
 public slots:
