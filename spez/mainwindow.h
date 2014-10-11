@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "cserialport.h"
 
 namespace Ui {
 class MainWindow;
@@ -14,9 +15,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
+public slots:
+    void Slot_change_combo(QString text);
+    void Slot_click_push();
 private:
     Ui::MainWindow *ui;
+    CSerialPort *serport;
+    QString comport;
 };
 
 #endif // MAINWINDOW_H

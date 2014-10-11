@@ -11,6 +11,7 @@ class CSerialPort : public QObject
     Q_OBJECT
 public:
     CSerialPort();
+    QList<QString> GiveAvaliableCom(void);
 public slots:
     void Slot_CSerialProt_OpenComPort(QString name);
     void Slot_CSerialProt_CloseComPOrt(void);
@@ -20,8 +21,7 @@ signals:
     void Signal_CSerialPort_SendDataToIFRNS(QByteArray data);
     void Signal_CSerialPort_OpenIsNormal();
 private:
-    QSerialPort *serial;
-    QList<QString> GiveAvaliableCom(void);
+    QSerialPort *serial;   
 };
 
 #endif // CSERIALPORT_H
