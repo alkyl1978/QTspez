@@ -27,9 +27,7 @@ if (serial->open(QIODevice::ReadWrite))
     }
     else
     {
-        //QMessageBox::critical(this, tr("Невозможно открыть порт"),
-        //                      tr("Возможно порт занят"),
-        //                     QMessageBox::Ok);
+       qDebug() << "Error" ;
     }
 }
 
