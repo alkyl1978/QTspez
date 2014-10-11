@@ -53,7 +53,7 @@ void CSerialPort::Slot_ReadData_From_Com()
     {
         if (status==0)
         {
-            //emit Signal_CSerialPort_SendDataToIFRNS(data);
+           emit Signal_CSerialPort_SendDataToIFRNS(data);
         }
         if (status==1)
         {
@@ -61,14 +61,14 @@ void CSerialPort::Slot_ReadData_From_Com()
         }
         if (status==2)
         {
-            //emit Signal_CSerialPort_SendDataToXModem(data);
+            emit Signal_CSerialPort_SendDataToXModem(data);
         }
     }
     else if(statusPRIorSON==1)
     {
         if (status==0)
         {
-            //emit Signal_CSerialPort_SendDataToPRI(data);
+            emit Signal_CSerialPort_SendDataToPRI(data);
         }
         if (status==1)
         {
@@ -79,7 +79,7 @@ void CSerialPort::Slot_ReadData_From_Com()
     {
         if (status==0)
         {
-            //emit Signal_CSerialPort_SendDataToIFRNS_struct1(data);
+            emit Signal_CSerialPort_SendDataToIFRNS_struct1(data);
         }
         if (status==1)
         {
