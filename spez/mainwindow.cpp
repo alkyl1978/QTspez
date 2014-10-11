@@ -22,6 +22,7 @@ MainWindow::~MainWindow()
 void MainWindow::Slot_change_combo(QString text)
 {
   comport=text;
+  ui->pushButton->setEnabled(true);
   connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(Slot_click_push()));
   connect(serport,SIGNAL(Signal_CSerialPort_OpenIsNormal()),this,SLOT(Slot_openISNormal()));
 }
