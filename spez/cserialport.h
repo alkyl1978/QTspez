@@ -1,20 +1,15 @@
 #ifndef CSERIALPORT_H
 #define CSERIALPORT_H
 
-#include <QApplication>
 #include <QtSerialPort/QSerialPort>
-#include <QMainWindow>
 #include <QtSerialPort/QSerialPortInfo>
 #include <QDebug>
-#include <QString>
-#include <QMessageBox>
 
 
 class CSerialPort
 {
-    Q_OBJECT
 public:
-
+    CSerialPort();
 public slots:
     void Slot_CSerialProt_OpenComPort(QString name);
     void Slot_CSerialProt_CloseComPOrt(void);
