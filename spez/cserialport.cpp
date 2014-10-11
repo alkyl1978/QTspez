@@ -29,13 +29,12 @@ void CSerialPort::Slot_CSerialProt_OpenComPort(QString name)
 if (serial->open(QIODevice::ReadWrite))
     {
         qDebug() << "Open is normal" ;
-        emit Signal_CSerialPort_OpenIsNormal();
     }
     else
     {
-        QMessageBox::critical(this, tr("Невозможно открыть порт"),
-                              tr("Возможно порт занят"),
-                              QMessageBox::Ok);
+        //QMessageBox::critical(this, tr("Невозможно открыть порт"),
+        //                      tr("Возможно порт занят"),
+        //                     QMessageBox::Ok);
     }
 }
 
@@ -48,14 +47,13 @@ void CSerialPort::Slot_CSerialProt_CloseComPOrt()
 void CSerialPort::Slot_ReadData_From_Com()
 {
     QByteArray data;
-    QApplication::processEvents();
     if (serial->error())  qDebug()<<"Eror"<<serial->errorString()<<"   "<<serial->error();
     data = serial->readAll();
     if (statusPRIorSON==0)
     {
         if (status==0)
         {
-            emit Signal_CSerialPort_SendDataToIFRNS(data);
+            //emit Signal_CSerialPort_SendDataToIFRNS(data);
         }
         if (status==1)
         {
@@ -63,14 +61,14 @@ void CSerialPort::Slot_ReadData_From_Com()
         }
         if (status==2)
         {
-            emit Signal_CSerialPort_SendDataToXModem(data);
+            //emit Signal_CSerialPort_SendDataToXModem(data);
         }
     }
     else if(statusPRIorSON==1)
     {
         if (status==0)
         {
-            emit Signal_CSerialPort_SendDataToPRI(data);
+            //emit Signal_CSerialPort_SendDataToPRI(data);
         }
         if (status==1)
         {
@@ -81,7 +79,7 @@ void CSerialPort::Slot_ReadData_From_Com()
     {
         if (status==0)
         {
-            emit Signal_CSerialPort_SendDataToIFRNS_struct1(data);
+            //emit Signal_CSerialPort_SendDataToIFRNS_struct1(data);
         }
         if (status==1)
         {
