@@ -18,6 +18,7 @@ public slots:
     void Slot_Write_to_Com(QByteArray data1);
 signals:
     void Signal_CSerialPort_SendDataToIFRNS(QByteArray data);
+    void Signal_CSerialPort_OpenIsNormal();
 private:
     QSerialPort *serial;
     QList<QString> GiveAvaliableCom(void);

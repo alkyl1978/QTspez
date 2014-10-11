@@ -29,6 +29,7 @@ void CSerialPort::Slot_CSerialProt_OpenComPort(QString name)
 if (serial->open(QIODevice::ReadWrite))
     {
         qDebug() << "Open is normal" ;
+        emit Signal_CSerialPort_OpenIsNormal();
     }
     else
     {
