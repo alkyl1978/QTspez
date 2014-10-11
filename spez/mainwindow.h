@@ -18,10 +18,12 @@ public:
 public slots:
     void Slot_change_combo(QString text);
     void Slot_click_push();
+    void Slot_openISNormal();
 private:
     Ui::MainWindow *ui;
     CSerialPort *serport;
     QString comport;
+    int openport;
 };
 
 #endif // MAINWINDOW_H
