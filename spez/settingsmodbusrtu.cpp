@@ -29,19 +29,11 @@ void SettingsModbusRTU::showEvent(QShowEvent * event)
 
         //Populate cmbPort-cmbRTS
         #ifdef Q_OS_WIN32
-            ui->cmbPort->addItem("COM1:");
-            ui->cmbPort->addItem("COM2:");
-            ui->cmbPort->addItem("COM3:");
-            ui->cmbPort->addItem("COM4:");
             ui->cmbRTS->addItem("Disable");
             ui->cmbRTS->addItem("Enable");
             ui->cmbRTS->addItem("HandShake");
             ui->cmbRTS->addItem("Toggle");
         #else
-            ui->cmbPort->addItem("/dev/ttyS0");
-            ui->cmbPort->addItem("/dev/ttyS1");
-            ui->cmbPort->addItem("/dev/ttyS2");
-            ui->cmbPort->addItem("/dev/ttyS3");
             ui->cmbRTS->addItem("None");
             ui->cmbRTS->addItem("Up");
             ui->cmbRTS->addItem("Down");
@@ -49,7 +41,7 @@ void SettingsModbusRTU::showEvent(QShowEvent * event)
 
         //Selection of port name
         if ((ui->cmbPort->findText(m_settings->serialPort()) == -1))
-            ui->cmbPort->addItem(m_settings->serialPort());
+        ui->cmbPort->addItem(m_settings->serialPort());
         ui->cmbPort->addItem("Add Port");
 
         ui->cmbPort->setCurrentIndex(ui->cmbPort->findText(m_settings->serialPort()));

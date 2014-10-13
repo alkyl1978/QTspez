@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "cserialport.h"
 
 namespace Ui {
 class MainWindow;

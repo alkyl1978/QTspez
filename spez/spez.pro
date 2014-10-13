@@ -15,21 +15,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     settingsmodbusrtu.cpp \
-    settingsmodbustcp.cpp \
     modbuscommsettings.cpp \
-    modbusadapter.cpp \
-    rawdatamodel.cpp
+    modbusadapter.cpp
 
 HEADERS  += mainwindow.h \
     settingsmodbusrtu.h \
-    settingsmodbustcp.h \
     modbuscommsettings.h \
-    modbusadapter.h \
-    rawdatamodel.h
+    modbusadapter.h
 
 FORMS    += mainwindow.ui \
-    settingsmodbusrtu.ui \
-    settingsmodbustcp.ui
+    settingsmodbusrtu.ui
 
-RESOURCES += \
-    data/qModMaster.qrc
+RESOURCES +=
