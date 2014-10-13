@@ -34,7 +34,7 @@ if (serial->open(QIODevice::ReadWrite))
     else
     {
        qDebug() << "Error" ;
-       emit Signal_CSerialPort_Error("Error");
+       emit Signal_CSerialPort_Error(serial->errorString());
     }
 }
 
@@ -48,7 +48,11 @@ void CSerialPort::Slot_CSerialProt_CloseComPOrt()
 void CSerialPort::Slot_ReadData_From_Com()
 {
     QByteArray data;
-    if (serial->error())  qDebug()<<"Eror"<<serial->errorString()<<"   "<<serial->error();
+    if (serial->error())
+    {
+        qDebug()<<"Eror"<<serial->errorString()<<"   "<<serial->error();
+        emit Signal_CSerialPort_Error(serial->errorString());
+    }
     data = serial->readAll();
 }
 
