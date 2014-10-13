@@ -4,7 +4,7 @@
 #include <QtWidgets/QDialog>
 #include <QSettings>
 
-#include "src/modbuscommsettings.h"
+#include "modbuscommsettings.h"
 
 namespace Ui {
     class SettingsModbusRTU;

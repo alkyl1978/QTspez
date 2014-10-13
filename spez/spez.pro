@@ -14,9 +14,20 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-        cserialport.cpp
+        cserialport.cpp \
+    settingsmodbusrtu.cpp \
+    settingsmodbustcp.cpp \
+    modbuscommsettings.cpp
 
 HEADERS  += mainwindow.h \
-            cserialport.h
+            cserialport.h \
+    settingsmodbusrtu.h \
+    settingsmodbustcp.h \
+    modbuscommsettings.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    settingsmodbusrtu.ui \
+    settingsmodbustcp.ui
+
+RESOURCES += \
+    data/qModMaster.qrc

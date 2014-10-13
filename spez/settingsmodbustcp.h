@@ -5,7 +5,7 @@
 #include <QSettings>
 #include <QtWidgets/QAbstractButton>
 
-#include "src/modbuscommsettings.h"
+#include "modbuscommsettings.h"
 
 namespace Ui {
     class SettingsModbusTCP;
