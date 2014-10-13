@@ -10,9 +10,9 @@ class ModbusAdapter : public QObject
     Q_OBJECT
 public:
     explicit ModbusAdapter(QObject *parent = 0);
-    void modbusConnectRTU(QString port, int baud);
-
-
+    void modbusSetPort(QString port, int baud);
+    void modbusClose();
+    void modbusConnect();
 
 private:
 modbus_t* m_modbus;
