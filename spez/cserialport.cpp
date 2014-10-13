@@ -58,5 +58,14 @@ void CSerialPort::Slot_ReadData_From_Com()
 
 void CSerialPort::Slot_Write_to_Com(QByteArray data1)
 {
-    serial->write(data1);
+    if(serial->write(data1))
+    {
+        qDebug() << "Write is normal" ;
+    }
+    else
+    {
+        qDebug()<<"Eror"<<serial->errorString()<<"   "<<serial->error();
+        emit Signal_CSerialPort_Error(serial->errorString());
+
+    }
 }
