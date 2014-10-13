@@ -34,8 +34,10 @@ if (serial->open(QIODevice::ReadWrite))
     else
     {
        qDebug() << "Error" ;
+       emit Signal_CSerialPort_Error("Error");
     }
 }
+
 
 void CSerialPort::Slot_CSerialProt_CloseComPOrt()
 {

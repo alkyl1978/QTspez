@@ -20,8 +20,9 @@ public slots:
 signals:
     void Signal_CSerialPort_SendDataToIFRNS(QByteArray data);
     void Signal_CSerialPort_OpenIsNormal();
+    void Signal_CSerialPort_Error(QString error);
 private:
-    QSerialPort *serial;   
+    QSerialPort *serial;
 };
 
 #endif // CSERIALPORT_H
