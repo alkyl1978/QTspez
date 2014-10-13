@@ -14,16 +14,18 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-        cserialport.cpp \
     settingsmodbusrtu.cpp \
     settingsmodbustcp.cpp \
-    modbuscommsettings.cpp
+    modbuscommsettings.cpp \
+    modbusadapter.cpp \
+    rawdatamodel.cpp
 
 HEADERS  += mainwindow.h \
-            cserialport.h \
     settingsmodbusrtu.h \
     settingsmodbustcp.h \
-    modbuscommsettings.h
+    modbuscommsettings.h \
+    modbusadapter.h \
+    rawdatamodel.h
 
 FORMS    += mainwindow.ui \
     settingsmodbusrtu.ui \
