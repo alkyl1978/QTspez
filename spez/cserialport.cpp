@@ -56,6 +56,11 @@ void CSerialPort::Slot_ReadData_From_Com()
     data = serial->readAll();
 }
 
+void CSerialPort::Slot_Error(QSerialPort::error err)
+{
+
+}
+
 void CSerialPort::Slot_Write_to_Com(QByteArray data1)
 {
     serial->write(data1);

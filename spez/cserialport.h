@@ -17,6 +17,7 @@ public slots:
     void Slot_CSerialProt_CloseComPOrt(void);
     void Slot_ReadData_From_Com(void);
     void Slot_Write_to_Com(QByteArray data1);
+    void Slot_Error(QSerialPort::error err);
 signals:
     void Signal_CSerialPort_SendDataToIFRNS(QByteArray data);
     void Signal_CSerialPort_OpenIsNormal();
