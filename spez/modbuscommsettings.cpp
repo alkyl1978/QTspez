@@ -9,14 +9,6 @@ ModbusCommSettings::ModbusCommSettings(const QString &fileName, Format format , 
 void  ModbusCommSettings::loadSettings()
 {
 
-    if (this->value("TCPPort").isNull())
-        m_TCPPort = "502";
-    else
-        m_TCPPort = this->value("TCPPort").toString();
-    if (this->value("SlaveIP").isNull())
-        m_slaveIP = "127.000.000.001";
-    else
-        m_slaveIP = this->value("SlaveIP").toString();
     if (this->value("SerialPort").isNull())
         m_serialPort = "COM1";
     else
@@ -60,8 +52,6 @@ void  ModbusCommSettings::loadSettings()
 void  ModbusCommSettings::saveSettings()
 {
 
-    this->setValue("TCPPort",m_TCPPort);
-    this->setValue("SlaveIP",m_slaveIP);
     this->setValue("SerialPort",m_serialPort);
     this->setValue("Baud",m_baud);
     this->setValue("DataBits",m_dataBits);
@@ -71,26 +61,6 @@ void  ModbusCommSettings::saveSettings()
     this->setValue("MaxNoOfLines",m_maxNoOfLines);
     this->setValue("TimeOut",m_timeOut);
 
-}
-
-QString  ModbusCommSettings::TCPPort()
-{
-    return m_TCPPort;
-}
-
-void ModbusCommSettings::setTCPPort(QString tcpPort)
-{
-    m_TCPPort = tcpPort;
-}
-
-void ModbusCommSettings::setSlaveIP(QString IP)
-{
-    m_slaveIP = IP;
-}
-
-QString  ModbusCommSettings::slaveIP()
-{
-    return m_slaveIP;
 }
 
 QString  ModbusCommSettings::serialPort()

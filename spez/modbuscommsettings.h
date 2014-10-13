@@ -36,9 +36,6 @@ public:
     void saveSettings();
 
 private:
-    //TCP
-    QString m_TCPPort;
-    QString m_slaveIP;
     //Serial
     QString m_serialPort;
     QString m_baud;
