@@ -16,14 +16,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 public slots:
-    void Slot_change_combo(QString text);
-    void Slot_click_push();
-    void Slot_openISNormal();
+
 private:
     Ui::MainWindow *ui;
-    CSerialPort *serport;
-    QString comport;
-    int openport;
+    QList<QString> GiveAvaliableCom();
 };
 
 #endif // MAINWINDOW_H
