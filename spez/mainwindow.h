@@ -15,11 +15,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void showSettingsModbusRTU();
 public slots:
 
 private:
     Ui::MainWindow *ui;
     QList<QString> GiveAvaliableCom();
+
 };
 
 #endif // MAINWINDOW_H

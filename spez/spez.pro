@@ -14,16 +14,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    settingsmodbusrtu.cpp \
-    modbuscommsettings.cpp \
     modbusadapter.cpp
 
 HEADERS  += mainwindow.h \
-    settingsmodbusrtu.h \
-    modbuscommsettings.h \
     modbusadapter.h
 
-FORMS    += mainwindow.ui \
-    settingsmodbusrtu.ui
+FORMS    += mainwindow.ui
 
 RESOURCES +=
