@@ -11,10 +11,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = spez
 TEMPLATE = app
 
-LIBS += -lmodbus
+#LIBS += -lmodbus
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
+	mainwindow.cpp \
     modbusadapter.cpp
 
 HEADERS  += mainwindow.h \
