@@ -17,12 +17,10 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void showSettingsModbusRTU();
 public slots:
 
 private slots:
     void on_pushButton_clicked();
-
     void on_comboBox_currentIndexChanged(const QString &arg1);
 
 private:

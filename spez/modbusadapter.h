@@ -10,7 +10,7 @@ class ModbusAdapter : public QObject
     Q_OBJECT
 public:
     explicit ModbusAdapter(QObject *parent = 0);
-    void modbusSetPort(QString port, int baud);
+    void modbusSetPort(QString port);
     void modbusClose();
     void modbusConnect();
     bool modbusIsconnect();
@@ -19,6 +19,7 @@ private:
 modbus_t* m_modbus;
 bool m_connected;
 uint16_t tab_reg[32];
+QString comport;
 signals:
 
 

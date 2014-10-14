@@ -12,16 +12,9 @@ ModbusAdapter::ModbusAdapter(QObject *parent) :
     m_modbus=NULL;
 }
 
-void ModbusAdapter::modbusSetPort(QString port, int baud)
+void ModbusAdapter::modbusSetPort(QString port)
 {
-    if(m_modbus!=NULL)
-    {
-       if(m_connected)modbus_close(m_modbus);
-        m_connected=false;
-        modbus_free(m_modbus);
-    }
-    m_modbus=modbus_new_rtu(port.toStdString().c_str(), baud, 'N', 8, 1);
-    modbus_set_slave(m_modbus, 0x0B);
+   comport= port;
 }
 
 void ModbusAdapter::modbusClose()
@@ -32,12 +25,7 @@ void ModbusAdapter::modbusClose()
 
 void ModbusAdapter::modbusConnect()
 {
-    if (m_modbus==NULL) return;
-    if(!modbus_connect(m_modbus))
-    {
-        m_connected=true;
-        modbus_read_registers(m_modbus, 50, 15, tab_reg);
-    }
+
 }
 
 bool ModbusAdapter::modbusIsconnect()

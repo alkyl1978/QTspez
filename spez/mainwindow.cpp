@@ -5,6 +5,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    modbus= new ModbusAdapter;
     ini=new QSettings("setting.ini",QSettings::IniFormat);
     ui->setupUi(this);
     ui->comboBox->addItems(GiveAvaliableCom());
@@ -14,9 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     }
     ui->vSlid_X->setValue(ini->value("Servo/X",0).toInt());
     ui->vSlid_Y->setValue(ini->value("Servo/Y",0).toInt());
-    ui->vSlid_Z->setValue(ini->value("Servo/Z",0).toInt());
-    modbus= new ModbusAdapter;
-  // modbus->modbusSetPort(ui->comboBox->currentText().toStdString().c_str(),115200);
+    ui->vSlid_Z->setValue(ini->value("Servo/Z",0).toInt()); 
 }
 
 MainWindow::~MainWindow()
@@ -41,14 +40,6 @@ QList<QString> MainWindow::GiveAvaliableCom()
 
 void MainWindow::on_pushButton_clicked()
 {
-    if(!modbus->modbusIsconnect())
-    {
-        modbus->modbusConnect();
-    }
-    else
-    {
-        modbus->modbusClose();
-    }
     if(modbus->modbusIsconnect()) ui->pushButton->setText(tr("Закрыть порт"));
     else ui->pushButton->setText(tr("Открыть порт"));
 }
@@ -56,7 +47,7 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
 {
- modbus->modbusSetPort(arg1.toStdString().c_str(),115200);
+ modbus->modbusSetPort(arg1);
  if(modbus->modbusIsconnect()) ui->pushButton->setText(tr("Закрыть порт"));
  else ui->pushButton->setText(tr("Открыть порт"));
 }
