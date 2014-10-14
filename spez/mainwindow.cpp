@@ -15,7 +15,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->vSlid_X->setValue(ini->value("Servo/X",0).toInt());
     ui->vSlid_Y->setValue(ini->value("Servo/Y",0).toInt());
     ui->vSlid_Z->setValue(ini->value("Servo/Z",0).toInt());
-    ini->sync();
 }
 
 MainWindow::~MainWindow()
