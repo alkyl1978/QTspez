@@ -2,7 +2,7 @@
 #define MODBUSADAPTER_H
 
 #include <QObject>
-#include "modbus/inc/modbus.h"
+#include <modbus/modbus.h>
 
 
 class ModbusAdapter : public QObject

@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->vSlid_Y->setValue(ini->value("Servo/Y",0).toInt());
     ui->vSlid_Z->setValue(ini->value("Servo/Z",0).toInt());
     modbus= new ModbusAdapter;
-    modbus->modbusSetPort(ui->comboBox->currentText().toStdString().c_str(),115200);
+  // modbus->modbusSetPort(ui->comboBox->currentText().toStdString().c_str(),115200);
 }
 
 MainWindow::~MainWindow()
