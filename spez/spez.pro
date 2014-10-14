@@ -16,9 +16,11 @@ TEMPLATE = app
 SOURCES += main.cpp\
 	mainwindow.cpp \
     modbusadapter.cpp
+	setingmodbus.cpp
 
 HEADERS  += mainwindow.h \
-    modbusadapter.h
+	    modbusadapter.h \
+	    setingmodbus.h
 
 FORMS    += mainwindow.ui
 
