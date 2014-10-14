@@ -11,7 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = spez
 TEMPLATE = app
 
-#LIBS += -lmodbus
+LIBS += -lmodbus
 
 SOURCES += main.cpp\
 	mainwindow.cpp \
@@ -23,3 +23,9 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui
 
 RESOURCES +=
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/modbus/lib/ -llibmodbus
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/modbus/lib/ -llibmodbusd
+
+INCLUDEPATH += $$PWD/modbus
+DEPENDPATH += $$PWD/modbus

@@ -2,7 +2,7 @@
 #define MODBUSADAPTER_H
 
 #include <QObject>
-//#include <modbus/modbus.h>
+#include "modbus/inc/modbus.h"
 
 
 class ModbusAdapter : public QObject
@@ -15,7 +15,7 @@ public:
     void modbusConnect();
 
 private:
-//modbus_t* m_modbus;
+modbus_t* m_modbus;
 bool m_connected;
 signals:
 
