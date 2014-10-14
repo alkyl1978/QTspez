@@ -41,11 +41,22 @@ QList<QString> MainWindow::GiveAvaliableCom()
 
 void MainWindow::on_pushButton_clicked()
 {
-    modbus->modbusConnect();
+    if(!modbus->modbusIsconnect())
+    {
+        modbus->modbusConnect();
+    }
+    else
+    {
+        modbus->modbusClose();
+    }
+    if(modbus->modbusIsconnect()) ui->pushButton->setText(tr("Закрыть порт"));
+    else ui->pushButton->setText(tr("Открыть порт"));
 }
 
 
 void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
 {
-
+ modbus->modbusSetPort(arg1.toStdString().c_str(),115200);
+ if(modbus->modbusIsconnect()) ui->pushButton->setText(tr("Закрыть порт"));
+ else ui->pushButton->setText(tr("Открыть порт"));
 }

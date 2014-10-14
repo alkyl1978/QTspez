@@ -9,13 +9,17 @@ ModbusAdapter::ModbusAdapter(QObject *parent) :
     m_modbus(NULL)
 {
     m_connected=false;
+    m_modbus=NULL;
 }
 
 void ModbusAdapter::modbusSetPort(QString port, int baud)
 {
-
-m_modbus=modbus_new_rtu(port.toStdString().c_str(), baud, 'N', 8, 1);
-
+    if(m_modbus!=NULL)
+    {
+        modbus_free(m_modbus);
+        m_connected=false;
+    }
+    m_modbus=modbus_new_rtu(port.toStdString().c_str(), baud, 'N', 8, 1);
 }
 
 void ModbusAdapter::modbusClose()
