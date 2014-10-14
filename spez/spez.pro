@@ -25,7 +25,7 @@ FORMS    += mainwindow.ui
 RESOURCES +=
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/modbus/lib/ -llibmodbus
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/modbus/lib/ -llibmodbusd
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/modbus/lib/ -llibmodbus
 
 INCLUDEPATH += $$PWD/modbus
 DEPENDPATH += $$PWD/modbus

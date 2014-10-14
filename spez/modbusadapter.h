@@ -13,6 +13,7 @@ public:
     void modbusSetPort(QString port, int baud);
     void modbusClose();
     void modbusConnect();
+    bool modbusIsconnect();
 
 private:
 modbus_t* m_modbus;
