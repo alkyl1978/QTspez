@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QtSerialPort/QSerialPortInfo>
+#include <QSettings>
 
 namespace Ui {
 class MainWindow;
@@ -21,6 +22,7 @@ public slots:
 private:
     Ui::MainWindow *ui;
     QList<QString> GiveAvaliableCom();
+    QSettings *ini;
 
 };
 

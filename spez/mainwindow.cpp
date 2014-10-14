@@ -5,6 +5,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    ini=new QSettings("setting.ini",QSettings::NativeFormat);
     ui->setupUi(this);
     ui->comboBox->addItems(GiveAvaliableCom());
     if(ui->comboBox->count())
