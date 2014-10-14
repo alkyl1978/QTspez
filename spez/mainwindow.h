@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtSerialPort/QSerialPortInfo>
 #include <QSettings>
+#include "modbusadapter.h"
 
 namespace Ui {
 class MainWindow;
