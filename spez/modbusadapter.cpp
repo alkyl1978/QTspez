@@ -32,11 +32,13 @@ void ModbusAdapter::modbusClose()
 
 void ModbusAdapter::modbusConnect()
 {
+    uint8_t Status;
     if (m_modbus==NULL) return;
     if(!modbus_connect(m_modbus))
     {
         m_connected=true;
         modbus_read_registers(m_modbus, 50, 15, tab_reg);
+        modbus_write_register(m_modbus,50,5);
     }
 }
 
