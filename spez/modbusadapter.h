@@ -19,6 +19,7 @@ private:
 modbus_t* m_modbus;
 bool m_connected;
 uint16_t tab_reg[32];
+uint8_t   tab_bit[32];
 signals:
 
 
