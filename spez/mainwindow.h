@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtSerialPort/QSerialPortInfo>
 
 namespace Ui {
 class MainWindow;
@@ -20,7 +19,6 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    QList<QString> GiveAvaliableCom();
 
 };
 
