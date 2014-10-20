@@ -23,6 +23,7 @@ void ModbusAdapter::modbusSetPort(QString port, int baud)
     }
     m_modbus=modbus_new_rtu(port.toStdString().c_str(), baud, 'N', 8, 1);
     modbus_set_slave(m_modbus, 0x0B);
+   modbus_read_registers(m_modbus,1000,10,tab_reg);
 }
 
 void ModbusAdapter::modbusClose()
